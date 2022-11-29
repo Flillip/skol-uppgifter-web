@@ -1,0 +1,146 @@
+:root {
+    --background-color: #1f0312;
+    --color: #e6ebe9;
+    --color-highlight: #9ca09e;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--background-color);
+    color: var(--color);
+}
+
+h1 {
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 1.0rem;
+}
+
+a {
+    font-size: 1.2rem;
+}
+
+.margin-center {
+    margin: 0 auto;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-center {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.transform-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+hr.dashed {
+    border-top: 2px dashed rgb(116, 115, 115);
+    width: 25rem;
+    margin: 1rem auto;
+}
+
+#landing {
+    padding-top: 10vh;
+    height: 90vh;
+    width: 100%;
+}
+
+#landing>img {
+    display: block;
+    height: 75%;
+    margin: auto auto;
+    filter: drop-shadow(0 0 1rem rgb(182, 182, 182));
+}
+
+.text-center {
+    text-align: center;
+}
+
+a:link,
+a:visited {
+    color: var(--color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-highlight);
+    text-decoration: underline;
+}
+
+#summary {
+    padding: 10vh 0;
+    width: 100%;
+}
+
+.text-container {
+    text-align: center;
+    width: 25vw;
+}
+
+#trivia {
+    padding: 10vh 0;
+}
+
+#trivia-text {
+    text-align: center;
+    width: 25vw;
+    height: 30vh;
+}
+
+#next-trivia-button {
+    width: 8rem;
+    height: 2rem;
+    background-color: #884e6d;
+    color: rgb(236, 236, 236);
+    box-shadow: 0 0.2rem 0 #72264f;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+#next-trivia-button:active {
+    box-shadow: none;
+    transform: translateY(0.2rem);
+}
+
+#actors {
+    padding: 10vh 0;
+}
+
+#grid-actors {
+    display: grid;
+    grid-template-columns: 49fr 2fr 49fr;
+    column-gap: 2rem;
+    width: 25rem;
+}
+
+#grid-actors>*:nth-of-type(3n - 2) {
+    text-align: left;
+}
+
+#grid-actors>*:nth-of-type(3n - 1) {
+    text-align: center;
+}
+
+#grid-actors>*:nth-of-type(3n) {
+    text-align: right;
+}
