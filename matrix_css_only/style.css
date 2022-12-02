@@ -1,0 +1,129 @@
+:root {
+    --animation-length: 6s;
+}
+
+html,
+body {
+    background-color: black;
+    color: green;
+    padding: 0 0;
+    margin: 0 0;
+}
+
+#rain-wrapper {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+#rain-wrapper>* {
+    font-family: sans-serif;
+    font-size: 10px;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    float: left;
+}
+
+.rain1 {
+    background: -webkit-linear-gradient(rgba(0, 255, 0, 0.1), #0f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: raining var(--animation-length) linear infinite;
+    transform: translateY(-40vh);
+}
+
+@keyframes raining {
+    0% {
+        transform: translateY(-40vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.raindrop-wrapper {
+    display: grid;
+    height: 100%;
+    overflow: hidden;
+}
+
+.raindrop-wrapper>* {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.rain2 {
+    position: relative;
+    z-index: 50;
+}
+
+.gradient {
+    position: relative;
+    background: linear-gradient(#000f, rgba(0, 0, 0, 0));
+    height: 320px;
+    width: 11px;
+    transform: translateY(-320px);
+    animation: gradient-fall var(--animation-length) linear infinite;
+    z-index: 51;
+}
+
+.filler-bottom {
+    position: relative;
+    background-color: #000;
+    height: 100%;
+    width: 11px;
+    animation: filler-bottom-fall var(--animation-length) linear infinite;
+    z-index: 52;
+}
+
+.filler-top {
+    position: relative;
+    background-color: #000;
+    height: 100%;
+    width: 11px;
+    animation: filler-top-fall var(--animation-length) linear infinite;
+    z-index: 53;
+    transform: translateY(calc(-300px - 100vh));
+}
+
+@keyframes gradient-fall {
+    0% {
+        transform: translateY(-320px);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes filler-top-fall {
+    0% {
+        transform: translateY(calc(-300px - 100vh));
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes filler-bottom-fall {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(calc(100vh + 320px));
+    }
+}
+
+#button-wrapper {
+    z-index: 100;
+    position: absolute;
+}
+
+#button-wrapper>p {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 0;
+    margin: 0 0;
+}
